@@ -17,4 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// Adicionando uma nova rota à aplicação
+const teste = require('./routes/teste');
+app.use('/ola', teste);
+
 module.exports = app;
