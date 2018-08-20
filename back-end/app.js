@@ -14,6 +14,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const db = require('./config/database');
+
+// mongodb:// -> protocolo de conexão ao MongoDB
+// localhost -> nome do servidor (no caso, a máquina local)
+// :27017 -> porta onde o servidor do MongoDB espera por conexões
+// brecho -> nome do banco de dados
+db('mongodb://localhost:27017/brecho');
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
