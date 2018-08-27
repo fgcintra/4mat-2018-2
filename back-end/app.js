@@ -29,4 +29,7 @@ app.use('/users', usersRouter);
 const teste = require('./routes/teste');
 app.use('/ola', teste);
 
+const item = require('./routes/item');
+app.use('/item', item);
+
 module.exports = app;

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 module.exports = function() {
 
-   const schema = moongoose.Schema({
+   const schema = mongoose.Schema({
       descricao: {
          type: String,
          required: true // Não pode ficar em branco
@@ -42,8 +42,7 @@ module.exports = function() {
          type: Date
       },
       valor_venda: {
-         type: Number,
-         required: true
+         type: Number
       }
 
    });
