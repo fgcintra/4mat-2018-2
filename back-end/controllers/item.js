@@ -24,7 +24,7 @@ module.exports = function () {
    controller.listar = function(req, res) {
 
       // find() retorna todos os objetos da coleção em um vetor
-      Item.find().exec().then(
+      Item.find().populate('tipo').exec().then(
          // Foi bem
          function(itens) {
             // Retorna os itens encontrados com status HTTP 200 (OK)

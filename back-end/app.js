@@ -32,4 +32,7 @@ app.use('/ola', teste);
 const item = require('./routes/item');
 app.use('/item', item);
 
+const tipo = require('./routes/tipo');
+app.use('/tipo', tipo);
+
 module.exports = app;
