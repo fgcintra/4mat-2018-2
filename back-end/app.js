@@ -35,4 +35,10 @@ app.use('/item', item);
 const tipo = require('./routes/tipo');
 app.use('/tipo', tipo);
 
+const linha = require('./routes/linha');
+app.use('/linha', linha);
+
+const tamanho = require('. /routes/tamanho');
+app.use('/tamanho', tamanho);
+
 module.exports = app;
