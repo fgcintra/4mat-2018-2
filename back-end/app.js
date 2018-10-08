@@ -22,6 +22,12 @@ const db = require('./config/database');
 // brecho -> nome do banco de dados
 db('mongodb://localhost:27017/brecho');
 
+// CORS = Cross-Origin Resource Sharing. Permite que o
+// front-end acesse o back-end a partir de um servidor:porta
+// diferente
+let cors = require('cors');
+app.use(cors());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

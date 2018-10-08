@@ -9,7 +9,7 @@ import { ItemService } from '../../services/item.service';
 })
 export class ItemListComponent implements OnInit {
 
-  private itens: any;
+  public itens: any;
   // Injeção de dependência no construtor
   constructor(private itemSrv: ItemService) { }
 

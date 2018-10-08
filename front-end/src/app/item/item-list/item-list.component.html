@@ -1,5 +1,24 @@
 <h1>Listagem de itens</h1>
 
-<pre>
-  {{ itens }}
-</pre>
+<table>
+  <tr>
+    <th>Descrição</th>
+    <th>Tipo</th>
+    <th>Cor</th>
+    <th>Estado Cons.</th>
+    <th>Conjunto?</th>
+    <th>Data compra</th>
+    <th>Valor compra</th>
+  </tr>
+
+  <tr *ngFor="let item of itens">
+    <td>{{ item.descricao }}</td>
+    <td>{{ item.tipo.descricao }}</td>
+    <td>{{ item.cor }} </td>
+    <td>{{ item.estado_conservacao }}</td>
+    <td>{{ item.conjunto}} </td>
+    <td>{{ item.data_compra | date: 'dd/MM/yyyy':'+0000' }} </td>
+    <td>{{ item.valor_compra | currency:'BRL':'symbol':'1.2':'pt' }} </td>
+  </tr>
+
+</table>
