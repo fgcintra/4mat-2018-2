@@ -1,5 +1,6 @@
 <h1>Listagem de itens</h1>
 
+<!--
 <table>
   <tr>
     <th>Descrição</th>
@@ -22,3 +23,45 @@
   </tr>
 
 </table>
+  -->
+
+  <table mat-table [dataSource]="itens">
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef>Descrição</th>
+      <td mat-cell *matCellDef="let item">{{ item.descricao }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef>Tipo</th>
+      <td mat-cell *matCellDef="let item">{{ item.tipo.descricao }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cor">
+      <th mat-header-cell *matHeaderCellDef>Cor</th>
+      <td mat-cell *matCellDef="let item">{{ item.cor }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="estado_conservacao">
+      <th mat-header-cell *matHeaderCellDef>Estado Cons.</th>
+      <td mat-cell *matCellDef="let item">{{ item.estado_conservacao }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="conjunto">
+      <th mat-header-cell *matHeaderCellDef>Conjunto?</th>
+      <td mat-cell *matCellDef="let item">{{ item.conjunto }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="data_compra">
+      <th mat-header-cell *matHeaderCellDef>Data Compra</th>
+      <td mat-cell *matCellDef="let item">{{ item.data_compra | date: 'dd/MM/yyyy':'+0000' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="valor_compra">
+      <th mat-header-cell *matHeaderCellDef>Valor Compra</th>
+      <td mat-cell *matCellDef="let item">{{ item.valor_compra | currency:'BRL':'symbol':'1.2':'pt' }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunasVisiveis"></tr>
+    <tr mat-row *matRowDef="let linha; columns: colunasVisiveis"></tr>
+  </table>
+

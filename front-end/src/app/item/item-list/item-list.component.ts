@@ -13,6 +13,16 @@ export class ItemListComponent implements OnInit {
   // Injeção de dependência no construtor
   constructor(private itemSrv: ItemService) { }
 
+  public colunasVisiveis: string[] = [
+    'descricao',
+    'tipo',
+    'cor',
+    'estado_conservacao',
+    'conjunto',
+    'data_compra',
+    'valor_compra'
+  ];
+
   ngOnInit() {
     this.itemSrv.listar().subscribe(
       dados => this.itens = dados,
