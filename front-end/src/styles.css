@@ -1,3 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+   margin: 0;
+}
+
+.mat-row, .mat-header-row {
+   height: auto !important;
+}
+
+.mat-cell, .mat-header-cell {
+   padding: 6px !important;
+}

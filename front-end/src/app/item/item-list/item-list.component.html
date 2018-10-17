@@ -1,4 +1,6 @@
-<h1>Listagem de itens</h1>
+<mat-card-title>
+  Listagem de itens
+</mat-card-title>
 
 <!--
 <table>
@@ -24,11 +26,15 @@
 
 </table>
   -->
-
+<mat-card-content>
   <table mat-table [dataSource]="itens">
     <ng-container matColumnDef="descricao">
       <th mat-header-cell *matHeaderCellDef>Descrição</th>
-      <td mat-cell *matCellDef="let item">{{ item.descricao }}</td>
+      <td mat-cell *matCellDef="let item">
+        <a [routerLink]="['/item', item._id]">
+          {{ item.descricao }}
+        </a>
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="tipo">
@@ -48,7 +54,9 @@
 
     <ng-container matColumnDef="conjunto">
       <th mat-header-cell *matHeaderCellDef>Conjunto?</th>
-      <td mat-cell *matCellDef="let item">{{ item.conjunto }}</td>
+      <td mat-cell *matCellDef="let item">
+        <mat-checkbox checked="{{ item.conjunto ? 'checked' : ''}}" onclick="return false"></mat-checkbox>
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="data_compra">
@@ -64,4 +72,4 @@
     <tr mat-header-row *matHeaderRowDef="colunasVisiveis"></tr>
     <tr mat-row *matRowDef="let linha; columns: colunasVisiveis"></tr>
   </table>
-
+</mat-card-content>
