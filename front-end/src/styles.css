@@ -13,3 +13,12 @@ body {
 .mat-cell, .mat-header-cell {
    padding: 6px !important;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}

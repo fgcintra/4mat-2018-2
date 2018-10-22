@@ -1,3 +1,69 @@
-<p>
-  item-form works!
-</p>
+<mat-card-title>
+  {{ titulo }}
+</mat-card-title>
+
+<mat-card-content>
+
+  <form class="form-container">
+
+    <mat-form-field>
+      <mat-label>Descrição</mat-label>
+      <input matInput placeholder="Informe a descrição do item" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo</mat-label>
+      <mat-select placeholder="Escolha um tipo" required>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cor</mat-label>
+      <input matInput placeholder="Informe a cor do item">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Linha</mat-label>
+      <mat-select placeholder="Selecione a linha do item" required>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Estado de conservação</mat-label>
+      <mat-select placeholder="Selecione o estado de conservação" required>
+        <mat-option></mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-label>Conjunto?</mat-label>
+    <mat-checkbox required></mat-checkbox>
+
+    <mat-form-field>
+      <mat-label>Data da compra</mat-label>
+      <input matInput [matDatepicker]="dataCompra" placeholder="Selecione a data de compra" required>
+      <mat-datepicker-toggle matSuffix [for]="dataCompra"></mat-datepicker-toggle>
+      <mat-datepicker #dataCompra></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Valor da compra</mat-label>
+      <input matInput type="number" placeholder="Informe o valor da compra" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Data da venda</mat-label>
+      <input matInput [matDatepicker]="dataVenda" placeholder="Selecione a data de venda">
+      <mat-datepicker-toggle matSuffix [for]="dataVenda"></mat-datepicker-toggle>
+      <mat-datepicker #dataVenda></mat-datepicker>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Valor de venda</mat-label>
+      <input matInput type="number" placeholder="Informe o valor de venda">
+    </mat-form-field>
+
+  </form>
+
+</mat-card-content>
