@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { ItemService } from './services/item.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
@@ -42,6 +43,7 @@ registerLocaleData(localePt);
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatTableModule,
     MatToolbarModule,
     MatCardModule,
