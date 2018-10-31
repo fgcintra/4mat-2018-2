@@ -27,29 +27,46 @@
       <input matInput placeholder="Informe a cor do item" 
         name="cor" [(ngModel)]="item.cor">
     </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tamanho</mat-label>
+      <mat-select placeholder="Selecione o tamanho do item" required
+        name="tamanho" [(ngModel)]="item.tamanho">
+        <mat-option *ngFor="let tamanho of tamanhos" [value]="tamanho._id">
+          {{ tamanho.descricao }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>    
     
     <mat-form-field>
       <mat-label>Linha</mat-label>
       <mat-select placeholder="Selecione a linha do item" required
         name="linha" [(ngModel)]="item.linha">
-        <mat-option></mat-option>
+        <mat-option *ngFor="let linha of linhas" [value]="linha._id">
+          {{ linha.descricao }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Estado de conservação</mat-label>
-      <mat-select placeholder="Selecione o estado de conservação" required
-        name="estado_conservacao" [(ngModel)]="item.estado_conservacao">
-        <mat-option></mat-option>
-      </mat-select>
+      <mat-label>Cor</mat-label>
+      <input matInput placeholder="Informe a cor do artigo" required 
+        name="cor" [(ngModel)]="item.cor">
     </mat-form-field>
 
+    <mat-form-field>
+      <mat-label>Estado de conservação</mat-label>
+      <input matInput placeholder="Informe o estado de conservação" required
+        name="estado_conservacao" [(ngModel)]="item.estado_conservacao">
+    </mat-form-field>
+    
     <mat-label>Conjunto?</mat-label>
     <mat-checkbox required name="conjunto" [(ngModel)]="item.conjunto"></mat-checkbox>
 
     <mat-form-field>
       <mat-label>Data da compra</mat-label>
-      <input matInput [matDatepicker]="dataCompra" placeholder="Selecione a data de compra" required name="data_compra" [(ngModel)]="item.data_compra">
+      <input matInput [matDatepicker]="dataCompra" placeholder="Selecione a data de compra" 
+        required name="data_compra" [(ngModel)]="item.data_compra">
       <mat-datepicker-toggle matSuffix [for]="dataCompra"></mat-datepicker-toggle>
       <mat-datepicker #dataCompra></mat-datepicker>
     </mat-form-field>

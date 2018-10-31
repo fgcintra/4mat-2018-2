@@ -23,7 +23,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatNativeDateModule } from '@angular/material/core';
+
+/**** Datas em português no MatDatepicker  ****/
+
+// É preciso instalar os seguintes pacotes:
+// yarn add @angular/material-moment-adapter moment
+
+import { MatMomentDateModule, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
+import { MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
+// import { MatNativeDateModule } from '@angular/material/core';
+/**********************************************/
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
@@ -54,10 +63,17 @@ registerLocaleData(localePt);
     MatRadioModule,
     MatSelectModule,
     MatSliderModule,
-    MatNativeDateModule
+    /**** Datas em português no MatDatepicker  ****/
+    //MatNativeDateModule
+    MatMomentDateModule
+    /**********************************************/
   ],
   providers: [
-   ItemService
+    ItemService,
+    /**** Datas em português no MatDatepicker  ****/
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS}
+    /**********************************************/
   ],
   bootstrap: [AppComponent]
 })
