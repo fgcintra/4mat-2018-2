@@ -23,6 +23,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 /**** Datas em português no MatDatepicker  ****/
 
@@ -63,8 +65,10 @@ registerLocaleData(localePt);
     MatRadioModule,
     MatSelectModule,
     MatSliderModule,
+    MatButtonModule,
+    MatSnackBarModule,
     /**** Datas em português no MatDatepicker  ****/
-    //MatNativeDateModule
+    // MatNativeDateModule
     MatMomentDateModule
     /**********************************************/
   ],

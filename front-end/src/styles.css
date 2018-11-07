@@ -2,6 +2,13 @@
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+/*
+
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+*/
+
 body {
    margin: 0;
 }
@@ -21,4 +28,16 @@ body {
 
 .form-container > * {
   width: 100%;
+}
+
+.center-buttons {
+  text-align: center;
+}
+
+.center-buttons .mat-primary {
+  margin-right: 10px;
+}
+
+.center-buttons .mat-warn {
+  margin-left: 10px;
 }
