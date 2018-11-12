@@ -1,6 +1,21 @@
 <mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #rootMenu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">Cadastro</button>
+  </mat-menu>
+  
+  <mat-menu #subMenu="matMenu">
+    <a mat-menu-item href="item">Itens</a>
+    <!-- Coloque novos itens do submenu aqui -->
+  </mat-menu>
+
   <span>{{ title}}</span>
 </mat-toolbar>
+
+
 
 <mat-card>
   <router-outlet></router-outlet>

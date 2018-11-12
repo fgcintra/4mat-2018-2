@@ -25,6 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 /**** Datas em português no MatDatepicker  ****/
 
@@ -67,6 +69,8 @@ registerLocaleData(localePt);
     MatSliderModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatIconModule,
+    MatMenuModule,
     /**** Datas em português no MatDatepicker  ****/
     // MatNativeDateModule
     MatMomentDateModule
