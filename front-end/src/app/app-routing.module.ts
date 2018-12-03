@@ -10,6 +10,9 @@ const routes: Routes = [
     path: 'item', component: ItemListComponent
   },
   {
+    path: 'item/novo', component: ItemFormComponent
+  },
+  {
     path: 'item/:id', component: ItemFormComponent
   }
 ];
